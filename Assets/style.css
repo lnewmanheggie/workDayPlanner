@@ -79,6 +79,14 @@ input:focus, textarea {
 
 }
 
+.past, .present {
+  opacity: 1;
+}
+
+.future {
+  opacity: 0.5;
+}
+
 @media only screen and (max-width: 600px) {
 
   .jumbotron h1 {
