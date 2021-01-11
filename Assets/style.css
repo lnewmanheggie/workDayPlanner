@@ -6,10 +6,11 @@ body {
 
 .jumbotron {
   text-align: center;
-  background-color: transparent;
+  background-color:rgb(92, 228, 233, 0.7);
   color: black;
   border-radius: 0;
   border-bottom: 10px solid black;
+  box-shadow: 2px 4px 8px 0 rgb(94, 94, 94);
 }
 
 .lead {
@@ -28,11 +29,10 @@ body {
 }
 
 .hour {
-  background-color: rgb(104, 245, 250);
+  background-color: rgb(92, 228, 233);
   color: #000000;
   padding: 1rem;
   width: 10%;
-  /* border-top: 1px dashed #000000; */
 }
 
 textarea{
@@ -66,31 +66,6 @@ input:focus, textarea {
   outline: none !important;
 }
 
-.past {
-  background-color: #d3d3d3;
-}
-
-.present {
-  opacity: 1;
-}
-
-.future {
-  opacity: 0.5;
-}
-
-.saveBtn {
-  border-left: 1px solid black;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  background-color: #06AED5;
-  color: white;
-}
-
-.saveBtn i:hover {
-  font-size: 20px;
-  transition: all .3s ease-in-out;
-}
-
 .grid {
   display: grid;
   grid-gap: 1px;
@@ -104,3 +79,29 @@ input:focus, textarea {
 
 }
 
+@media only screen and (max-width: 600px) {
+
+  .jumbotron h1 {
+    font-size: 3rem;
+  }
+
+  p {
+    font-size: 0.5rem;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .hour,
+  .save {
+    padding: 0.2rem;
+    padding-top: 2.8rem;
+    width: 15%;
+  }
+
+  textarea {
+    width: 70%;
+  }
+
+}

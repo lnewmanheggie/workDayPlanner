@@ -31,9 +31,21 @@ function createRows() {
         row.append(hour);
 
         const description = $("<textarea>");
-
+        let customColor = getColors();
+        for (let k = 0; k < customColor.length; k++) {
+            if (customColor[k].row == i) {
+                let custCol = customColor[k].color;
+                description.attr("style", custCol);
+            } 
+        }
         let color = rowColor(textHr);
         description.attr("class", color);
+        if (description.attr("class") === "past") {
+            description.attr("style", "background-color: #d3d3d3");
+        } else if (description.attr("class") === "future") {
+            description.attr("style", "opacity: 0.5");
+        }
+        
         description.attr("id", "description-" + i);
         let savedText = getText();
         for (let j = 0; j < savedText.length; j++) {
@@ -92,7 +104,7 @@ function saveDescription() {
         const grid = $("<div>");
         grid.attr("class", "grid")
     
-        const colorArr = ["#cc2525", "#cc6225", "#cc9225", "#ccc925", "#33ce33", "#278f41", "#25a59f", "#2e5fca", "#be33b3"]
+        const colorArr = ["#cc2525", "#cc6225", "#cc9225", "#ccc925", "#33ce33", "#278f41", "#25a59f", "#2e5fca", "#d3d3d3"]
 
         for (let i = 0; i < colorArr.length; i++) {
             const color = $("<div>");
@@ -104,7 +116,7 @@ function saveDescription() {
 
         rowDiv.append(grid);
 
-        description.attr("style", "width: 63.9%");
+        description.attr("style", "width: 63.9%; background-color: #d3d3d3");
 
         function setColor() {
             let thisStyle = $(this).attr("style");
@@ -130,11 +142,9 @@ function saveDescription() {
                     } 
                 }
             }
-        
             if (seen === 0) {
                 savedColors.push(colors);
             }
-        
             rememberColor(savedColors);
 
         }
@@ -171,6 +181,7 @@ function hourText(i) {
 }
 
 let seenTime = 0;
+
 function rowColor(textHr) {
     if (seenTime === 0 && textHr != parsedTime) {
         return "past";
