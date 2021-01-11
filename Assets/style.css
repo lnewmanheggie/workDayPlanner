@@ -12,24 +12,18 @@ body {
   border-bottom: 10px solid black;
 }
 
-.description{
-  white-space: pre-wrap;
+.lead {
+  margin-top: 2rem;
 }
 
-.time-block{
-  text-align: center;
-  border-radius: 15px;
-}
-
-
-/* ****** */
+/* Calendar */
 
 .row {
   border: 5px solid white;
 }
 
 .container {
-  width: 80%;
+  width: 70%;
   margin-bottom: 2rem;
 }
 
@@ -42,12 +36,11 @@ body {
 }
 
 textarea{
-  background-color: #ff6961;
   border: none;
   resize: none;
   color: #000000;
   padding: 1rem;
-  height: 6rem;
+  height: 7rem;
   width: 80%;
 }
 
@@ -57,10 +50,15 @@ textarea{
   width: 10%;
 }
 
+.save:hover {
+  cursor: pointer;
+  background-color: rgb(145, 91, 196);
+}
+
 .hour,
 .save {
   text-align: center;
-  padding-top: 2.5rem;
+  padding-top: 2.8rem;
 }
 
 /* Get rid of blue line around input area */
@@ -68,23 +66,16 @@ input:focus, textarea {
   outline: none !important;
 }
 
-
-
-
-
 .past {
   background-color: #d3d3d3;
-  color: white;
 }
 
 .present {
-  background-color: #ff6961;
-  color: white;
+  opacity: 1;
 }
 
 .future {
-  background-color: #77dd77;
-  color: white;
+  opacity: 0.5;
 }
 
 .saveBtn {
@@ -100,6 +91,16 @@ input:focus, textarea {
   transition: all .3s ease-in-out;
 }
 
+.grid {
+  display: grid;
+  grid-gap: 1px;
+  grid-template-columns: repeat(3, 1fr);
+  width: 7rem;
+  height: 7rem;
+}
 
+.item {
+  background-color: #278f41;
 
+}
 
