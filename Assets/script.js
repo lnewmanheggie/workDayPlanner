@@ -5,6 +5,9 @@ const container = $(".container");
 currentDay.text(date);
 currentDay.attr("style", "font-style: italic;")
 
+const getSchedule = () => JSON.parse(localStorage.getItem("schedule")) || {};
+const setSchedule = val => localStorage.setItem("schedule", JSON.stringify(val));
+
 const colorArr = ["#cc2525", "#cc6225", "#cc9225", "#ccc925", "#33ce33", "#278f41", "#25a59f", "#2e5fca", "#d3d3d3"]
 const currentHour = parseInt(moment().format("H"))
 const schedule = getSchedule();
@@ -13,7 +16,7 @@ $(document).ready(function () {
     createRows();
 });
 
-function createRows() {
+const createRows = () => {
     for (let i = 8; i < 19; i++) {
         const row = $("<div>");
         row.attr("class", "row");
@@ -82,11 +85,6 @@ function setColor() {
     $($(this).parent()).remove()  // removes the color grid once something is clicked
 }
 
-function getSchedule() {
-    return JSON.parse(localStorage.getItem("schedule")) || {}
-}
-function setSchedule(val) {
-    localStorage.setItem("schedule", JSON.stringify(val))
-}
+
 
 

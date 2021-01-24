@@ -3,8 +3,6 @@ Schedule app that allows user to input events and save them, to help organize th
 
 ![Demo](./Assets/demo.gif)
 
-Link to deployed app:
-https://lnewmanheggie.github.io/workDayPlanner/
+[View the deployed app here](https://lnewmanheggie.github.io/workDayPlanner/)
 
-link to repo:
-https://github.com/lnewmanheggie/workDayPlanner
+
